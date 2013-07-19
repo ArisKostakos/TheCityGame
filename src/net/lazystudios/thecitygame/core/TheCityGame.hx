@@ -50,18 +50,18 @@ class TheCityGame
 		crazyFactory.name="Ergostasio Megaron";
 		crazyFactory.position=new LatLng(38.00, 23.30);
 		crazyFactory.addToWorld();
-		///
+		
 		//Create Some Businesses
 		var bakery:Business = BakeryBuilder.buildBusiness();
 		bakery.name="Xoriatiko";
 		bakery.position=new LatLng(37.97, 23.77);
 		bakery.addToWorld();
-		///
+		
 		var retailStore:Business = RetailStoreBuilder.buildBusiness();
 		retailStore.name="Gap";
 		retailStore.position=new LatLng(38.17, 23.15);
 		retailStore.addToWorld();
-		///
+		
 		var bar:Business = BarBuilder.buildBusiness();
 		bar.name="Akrotiri";
 		bar.position=new LatLng(37.87, 23.67);
