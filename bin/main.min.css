@@ -1,0 +1,5 @@
+#buttonContainer{position:absolute;left:100px;top:30px;z-index:1000;}
+#sendTruckBtn{font-size:20px;}
+html{height:100%}
+body{height:100%;margin:0;padding:0}
+#map-canvas{height:100%}
