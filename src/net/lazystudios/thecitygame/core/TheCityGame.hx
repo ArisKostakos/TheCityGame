@@ -8,8 +8,7 @@ import net.lazystudios.thecitygame.data.GoodType;
 import net.lazystudios.thecitygame.sprites.Business;
 import net.lazystudios.thecitygame.sprites.Factory;
 import net.lazystudios.thecitygame.elements.World;
-
-
+import net.lazystudios.thecitygame.ui.MainInterface;
 /**
  * ...
  * @author Aris Kostakos
@@ -38,6 +37,9 @@ class TheCityGame
 	
 	public static function init() 
 	{
+		//Init Interface
+		MainInterface.init();
+		
 		//Import Data
 		gameConfiguration();
 		

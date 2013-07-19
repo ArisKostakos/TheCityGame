@@ -2,7 +2,6 @@ package ;
 
 import net.lazystudios.thecitygame.core.TheCityGame;
 
-
 /**
  * ...
  * @author Aris Kostakos
