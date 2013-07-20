@@ -6,7 +6,11 @@ Based on original Google JS API documentation
 
 */
 package google.maps;
+#if haxe3
+import js.html.*;
+#else
 import js.Dom;
+#end
 
 extern class InfoWindowOptions {
 

@@ -70,15 +70,5 @@ class World
 	public function addToGame():Void
 	{
 		_display();
-		
-		google.maps.Event.addListener(_map, 'click', function(event) 
-		{
-			//Lib.alert('Point.X.Y: ' + event.latLng);
-			
-			var crazyFactory:Factory = TheCityGame.factoryTypes.get("crazyFactory").buildFactory();
-			crazyFactory.name="Ergostasio Megaron";
-			crazyFactory.position=event.latLng;
-			crazyFactory.addToWorld();
-		});
 	}
 }

@@ -39,4 +39,6 @@ class MapSprite
 		
 		_marker = new Marker(_markerOptions);
 	}
+ 
+
 }

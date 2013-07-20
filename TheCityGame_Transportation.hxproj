@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\TheCityGameTransportation.js" />
+    <movie path="C:\wamp\www\TCG_Client\TheCityGameTransportation.js" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
@@ -44,8 +44,8 @@
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
-    <option testMovie="OpenDocument" />
-    <option testMovieCommand="bin/index.html" />
+    <option testMovie="Custom" />
+    <option testMovieCommand="http://localhost/TCG_Client/index.html" />
   </options>
   <!-- Plugin storage -->
   <storage />

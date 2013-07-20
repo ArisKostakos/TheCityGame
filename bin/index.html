@@ -9,11 +9,31 @@
     <script type ="text/javascript" src="implementGoogleMapsV3.js"></script>
   </head>
   <body>
-		<div id="buttonContainer">
-		<button onClick="calcRoute();" id="sendTruckBtn">Send Truck</button>
+		<div id="traceDiv"></div>
+		<div id="userPane">
+			<div id="userInfo">You are not signed in!</div>
+			<div id="loginControls"></div>
+			<div id="warnings"></div>
 		</div>
 		
 		<div id="map-canvas"></div>
+		
+		<div id="controlsUI">
+
+		</div>
+		
+		<div id="controlsContainer">
+			<div id="ui_name"></div>
+			<div id="ui_money">
+				<img src="moneyIcon.png"/>
+				$
+				<div id="ui_MoneyValue"></div>
+			</div>
+			<div class="section">Build Factory</div>
+			<div id="FactoryBuildings"></div>
+			<div class="section">Build Business</div>
+			<div id="BusinessBuildings"></div>
+		</div>
 		<script src="TheCityGameTransportation.js"></script>
   </body>
 </html>

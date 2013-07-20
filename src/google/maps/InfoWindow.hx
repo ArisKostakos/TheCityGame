@@ -18,7 +18,11 @@ closeclick : Void - This event is fired when the close button was clicked.
 position_changed : Void - This event is fired when the position property changes.
 */
 package google.maps;
+#if haxe3
+import js.html.*;
+#else
 import js.Dom;
+#end
 
 extern class InfoWindow extends MVCObject{
 

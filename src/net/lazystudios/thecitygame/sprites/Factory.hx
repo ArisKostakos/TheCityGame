@@ -49,5 +49,14 @@ class Factory extends Building
 	override private function display():Void
 	{
 		super.display();
+		google.maps.Event.addListener(_marker, 'click',onMarkerClick);
+	}
+	
+	private function onMarkerClick(e):Void
+	{
+		var coordInfoWindow = new google.maps.InfoWindow();
+		coordInfoWindow.setContent("Factory Name: " + _name + "<br>Type: " + _type + "<br>Owner: " + _owner.name + "<br>Cost: " + _cost);
+		coordInfoWindow.setPosition(_marker.getPosition());
+		coordInfoWindow.open(TheCityGame.world.map);
 	}
 }

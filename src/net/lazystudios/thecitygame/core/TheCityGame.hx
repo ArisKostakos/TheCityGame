@@ -5,6 +5,7 @@ import google.maps.LatLng;
 import net.lazystudios.thecitygame.builders.BusinessBuilder;
 import net.lazystudios.thecitygame.builders.FactoryBuilder;
 import net.lazystudios.thecitygame.data.GoodType;
+import net.lazystudios.thecitygame.elements.User;
 import net.lazystudios.thecitygame.sprites.Business;
 import net.lazystudios.thecitygame.sprites.Factory;
 import net.lazystudios.thecitygame.elements.World;
@@ -21,6 +22,7 @@ class TheCityGame
 	private static var _factoryTypes:Map<String,FactoryBuilder>;
 	private static var _businessTypes:Map<String,BusinessBuilder>;
 	private static var _goodTypes:Map<String,GoodType>;
+	private static var _loggedInUser:User;
 	
 	//Setters / Getters
 	public static var world(get,never) : World;
@@ -35,16 +37,20 @@ class TheCityGame
 	public static var goodTypes(get,never) : Map<String,GoodType>;
 	static function get_goodTypes() { return _goodTypes; }
 	
+	public static var loggedInUser(get,set) : User;
+	static function get_loggedInUser() { return _loggedInUser; }
+	static function set_loggedInUser(value) { return _loggedInUser = value; } 
+	
 	public static function init() 
 	{
-		//Init Interface
-		MainInterface.init();
-		
 		//Import Data
 		gameConfiguration();
 		
 		//Create Map
 		_world.addToGame();
+		
+		//Init Interface
+		MainInterface.init();
 		
 		/*
 		//Create Some Factories
@@ -93,7 +99,7 @@ class TheCityGame
 		
 		factoryBuilder = new FactoryBuilder();
 		factoryBuilder.icon = 'Factory.png';  //from xml
-		factoryBuilder.cost = 1500000;  //from xml
+		factoryBuilder.cost = 2100000;  //from xml
 		factoryBuilder.type = "crazyFactory";
 		factoryBuilder.productionType.push(_goodTypes.get("Bread")); //from xml
 		factoryBuilder.productionType.push(_goodTypes.get("Clothes")); //from xml
@@ -106,22 +112,22 @@ class TheCityGame
 		var businessBuilder:BusinessBuilder;
 		
 		businessBuilder = new BusinessBuilder();
-		businessBuilder.icon = 'Business.png';  //from xml
-		businessBuilder.cost = 500000;  //from xml
+		businessBuilder.icon = 'bakery.png';  //from xml
+		businessBuilder.cost = 250000;  //from xml
 		businessBuilder.type = "Bakery";
 		businessBuilder.productType.push(_goodTypes.get("Bread")); //from xml
 		registerBusinessBuilder(businessBuilder);
 		
 		businessBuilder = new BusinessBuilder();
-		businessBuilder.icon = 'Business.png';  //from xml
-		businessBuilder.cost = 500000;  //from xml
+		businessBuilder.icon = 'retail.png';  //from xml
+		businessBuilder.cost = 250000;  //from xml
 		businessBuilder.type = "Retail Store";
 		businessBuilder.productType.push(_goodTypes.get("Clothes")); //from xml
 		registerBusinessBuilder(businessBuilder);
 		
 		businessBuilder = new BusinessBuilder();
-		businessBuilder.icon = 'Business.png';  //from xml
-		businessBuilder.cost = 500000;  //from xml
+		businessBuilder.icon = 'bar.png';  //from xml
+		businessBuilder.cost = 280000;  //from xml
 		businessBuilder.type = "Bar";
 		businessBuilder.productType.push(_goodTypes.get("Wine")); //from xml
 		registerBusinessBuilder(businessBuilder);
