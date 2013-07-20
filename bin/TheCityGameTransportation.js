@@ -1202,7 +1202,7 @@ net.lazystudios.thecitygame.ui.MainInterface.server_createFactory = function(eve
 	crazyFactory.set_name("unnamed");
 	crazyFactory.set_position(event.latLng);
 	crazyFactory.set_owner(net.lazystudios.thecitygame.core.TheCityGame.get_loggedInUser());
-	var r = new haxe.Http("http://localhost/TCG_Server/index.php");
+	var r = new haxe.Http(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	r.onError = function(r1) {
 		net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",r1);
 	};
@@ -1218,7 +1218,7 @@ net.lazystudios.thecitygame.ui.MainInterface.server_createFactory = function(eve
 	crazyFactory.addToWorld();
 }
 net.lazystudios.thecitygame.ui.MainInterface.server_refreshBuildings = function() {
-	var r = new haxe.Http("http://localhost/TCG_Server/index.php");
+	var r = new haxe.Http(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	r.onError = function(r1) {
 		net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",r1);
 	};
@@ -1279,7 +1279,7 @@ net.lazystudios.thecitygame.ui.MainInterface.onSignUp = function(e) {
 net.lazystudios.thecitygame.ui.MainInterface.onSignUpSubmit = function(e) {
 	net.lazystudios.thecitygame.ui.MainInterface._loginUsername = (js.Boot.__cast(js.Browser.document.getElementById("signUp_username") , HTMLInputElement)).value;
 	net.lazystudios.thecitygame.ui.MainInterface._loginPassword = (js.Boot.__cast(js.Browser.document.getElementById("signUp_password") , HTMLInputElement)).value;
-	var r = new haxe.Http("http://localhost/TCG_Server/index.php");
+	var r = new haxe.Http(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	r.onError = function(r1) {
 		net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",r1);
 	};
@@ -1303,7 +1303,7 @@ net.lazystudios.thecitygame.ui.MainInterface.onSignInSubmit = function(e) {
 	net.lazystudios.thecitygame.ui.MainInterface.loginRequest();
 }
 net.lazystudios.thecitygame.ui.MainInterface.loginRequest = function() {
-	var r = new haxe.Http("http://localhost/TCG_Server/index.php");
+	var r = new haxe.Http(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	r.onError = function(r1) {
 		net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",r1);
 	};
@@ -1420,9 +1420,9 @@ net.lazystudios.thecitygame.ui.MainInterface.setContent = function(id,content) {
 	d.innerHTML = content;
 }
 net.lazystudios.thecitygame.ui.MainInterface.AjaxExamples = function(e) {
-	var result = haxe.Http.requestUrl("http://localhost/TCG_Server/index.php");
+	var result = haxe.Http.requestUrl(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",result);
-	var r = new haxe.Http("http://localhost/TCG_Server/index.php");
+	var r = new haxe.Http(net.lazystudios.thecitygame.ui.MainInterface._serverUrl);
 	r.onError = function(r1) {
 		net.lazystudios.thecitygame.ui.MainInterface.setContent("traceDiv",r1);
 	};
@@ -1464,5 +1464,6 @@ haxe.Unserializer.BASE64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 haxe.ds.ObjectMap.count = 0;
 js.Browser.document = typeof window != "undefined" ? window.document : null;
 net.lazystudios.thecitygame.ui.MainInterface._quickLogin = false;
+net.lazystudios.thecitygame.ui.MainInterface._serverUrl = "../TCG_Server/index.php";
 Main.main();
 })();
